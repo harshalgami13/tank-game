@@ -1,0 +1,356 @@
+{
+    "id": "0724f44c-ea14-48c3-817e-ea26267ebdaf",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "troopsSelect",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "10078cdb-975c-431c-96df-beae21f8f6b2",
+            "label": "troopsframe",
+            "components": [],
+            "texture": {
+                "key": "troopsframe"
+            },
+            "x": 960,
+            "y": 540
+        },
+        {
+            "type": "Image",
+            "id": "e1d89f15-6ca3-4d91-8103-00b6417dcc13",
+            "label": "select_team_btn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "select-team-btn"
+            },
+            "x": 1747,
+            "y": 41,
+            "scaleX": 1.6,
+            "scaleY": 1.6
+        },
+        {
+            "type": "Image",
+            "id": "85e66142-e49d-4129-a4a5-7aadab8ce970",
+            "label": "back_to_home_btn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "back-to-home-btn"
+            },
+            "x": 166,
+            "y": 41,
+            "scaleX": 1.2,
+            "scaleY": 1.2
+        },
+        {
+            "type": "Image",
+            "id": "28fc87e5-0726-480d-8f74-2f5ca09c3414",
+            "label": "select_btn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "select-btn"
+            },
+            "x": 346,
+            "y": 944,
+            "scaleX": 0.7,
+            "scaleY": 0.7
+        },
+        {
+            "type": "Container",
+            "id": "e959918c-cb27-460e-9bb6-3b664ad99a28",
+            "label": "troops_list",
+            "scope": "CLASS",
+            "components": [],
+            "y": -2,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "079dfb8b-9540-4b53-aa8a-f7e0affd46f3",
+                    "label": "troops_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "troops-bg"
+                    },
+                    "x": 1279,
+                    "y": 787,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "5a7b9603-3877-46ae-b663-bc0ccdcf9852",
+                    "label": "mytroops_btn",
+                    "components": [],
+                    "texture": {
+                        "key": "mytroops-btn"
+                    },
+                    "x": 1279,
+                    "y": 511
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "d9497fa1-55ba-4754-b042-77c3a42a71db",
+            "label": "preview_troops",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "03edd5f5-bfb3-4fbd-9690-f5bff4f1bde0",
+                    "label": "previewTank",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "popup-tank1"
+                    },
+                    "x": 346,
+                    "y": 422,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "type": "Image",
+                    "id": "f62c205c-1bdb-4a1e-be06-742cb22fbeb8",
+                    "label": "stats",
+                    "components": [],
+                    "texture": {
+                        "key": "stats"
+                    },
+                    "x": 346,
+                    "y": 808,
+                    "visible": false
+                },
+                {
+                    "type": "Text",
+                    "id": "2cc56a25-a3bc-4232-b3fe-a282d9e5b54f",
+                    "label": "text_0",
+                    "components": [],
+                    "x": 263,
+                    "y": 760,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "Strength",
+                    "fontFamily": "Normandia",
+                    "fontSize": "21px"
+                },
+                {
+                    "type": "Text",
+                    "id": "b41ea609-a2c4-48bc-a498-b7e300ac18dd",
+                    "label": "text_1",
+                    "components": [],
+                    "x": 265,
+                    "y": 791,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "attack power",
+                    "fontFamily": "Normandia",
+                    "fontSize": "21px"
+                },
+                {
+                    "type": "Text",
+                    "id": "cbd60ab5-27c1-4d90-bdd8-ada7ad33ca1d",
+                    "label": "text_2",
+                    "components": [],
+                    "x": 265,
+                    "y": 823,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "damage",
+                    "fontFamily": "Normandia",
+                    "fontSize": "21px"
+                },
+                {
+                    "type": "Text",
+                    "id": "26f2c7e9-3b6d-44cb-9859-ce6c2163c9a1",
+                    "label": "text",
+                    "components": [],
+                    "x": 264,
+                    "y": 853,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "defense",
+                    "fontFamily": "Normandia",
+                    "fontSize": "21px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "3e6f0c62-6201-458b-8a66-d35bf7992f66",
+            "label": "selected_troops",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "f77a884c-eba1-4660-97c1-a6482f2074d5",
+                    "label": "plus_img_0",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "plus-img"
+                    },
+                    "x": 939,
+                    "y": 271,
+                    "scaleX": 1.1,
+                    "scaleY": 1.1
+                },
+                {
+                    "type": "Sprite",
+                    "id": "45d8bf0e-975a-46d4-83a5-01b7c5d3268c",
+                    "label": "plus_img_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "plus-img"
+                    },
+                    "x": 1281,
+                    "y": 271,
+                    "scaleX": 1.1,
+                    "scaleY": 1.1
+                },
+                {
+                    "type": "Sprite",
+                    "id": "6d9410f9-f398-4b2e-95d4-f4247cc51d53",
+                    "label": "plus_img_2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "plus-img"
+                    },
+                    "x": 1627,
+                    "y": 271,
+                    "scaleX": 1.1,
+                    "scaleY": 1.1
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "e919480b-0fcf-4a27-a61e-12170aed89e4",
+            "label": "rectangle_0",
+            "components": [],
+            "x": 280,
+            "y": 750,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "fdc8c577-45b8-40fa-ae96-b9fc44f0173f",
+            "label": "rec_green_0",
+            "scope": "CLASS",
+            "components": [],
+            "x": 280,
+            "y": 750,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#42fc0b",
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "2c73d195-8711-4f44-95a1-c7a11f5f6977",
+            "label": "rectangle_1",
+            "components": [],
+            "x": 280,
+            "y": 783,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "8280ace4-af7a-4fa8-b59f-676c86df313e",
+            "label": "rec_green_1",
+            "scope": "CLASS",
+            "components": [],
+            "x": 280,
+            "y": 783,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#42fc0b",
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "7d6db6e3-8e61-497b-9592-1235d76fbd9b",
+            "label": "rectangle_2",
+            "components": [],
+            "x": 280,
+            "y": 815,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "d1075152-fc3d-4e12-b68e-775bf6c3cc21",
+            "label": "rec_green_2",
+            "scope": "CLASS",
+            "components": [],
+            "x": 280,
+            "y": 815,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#42fc0b",
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "061e9bf6-b2c8-4c18-a2c9-277ea4d727e4",
+            "label": "rectangle_3",
+            "components": [],
+            "x": 280,
+            "y": 844,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 300,
+            "height": 18
+        },
+        {
+            "type": "Rectangle",
+            "id": "b906e0ff-fb11-43ed-88b2-85d5b44cb123",
+            "label": "rec_green_3",
+            "scope": "CLASS",
+            "components": [],
+            "x": 280,
+            "y": 844,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#42fc0b",
+            "width": 300,
+            "height": 18
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

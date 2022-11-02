@@ -1,0 +1,116 @@
+{
+    "id": "7f7f4c85-2c67-4eff-9816-8e2393fb9333",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "BackgroundSelect",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "ac96df88-0361-405e-88af-e8c191bc1ceb",
+            "label": "regionbackground",
+            "components": [],
+            "texture": {
+                "key": "regionbackground"
+            },
+            "x": 960,
+            "y": 540
+        },
+        {
+            "type": "Image",
+            "id": "e05c0924-ab2b-481f-8c77-28e12121294b",
+            "label": "next_btn",
+            "components": [],
+            "texture": {
+                "key": "next-btn"
+            },
+            "x": 1808,
+            "y": 30
+        },
+        {
+            "type": "Image",
+            "id": "5fe8262e-ac01-4a0f-9942-09a4108a8c72",
+            "label": "back_btn",
+            "components": [],
+            "texture": {
+                "key": "back-btn"
+            },
+            "x": 97,
+            "y": 30
+        },
+        {
+            "type": "Image",
+            "id": "438ec855-4294-4835-a4c3-73e170997eaf",
+            "label": "slidenextbtn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "slidenextbtn"
+            },
+            "x": 1173,
+            "y": 882
+        },
+        {
+            "type": "Image",
+            "id": "db6a91d2-b0cb-4eb8-9df1-eff305224793",
+            "label": "slideprevbtn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "slideprevbtn"
+            },
+            "x": 748,
+            "y": 882
+        },
+        {
+            "type": "Text",
+            "id": "c55338c7-dd7f-4830-9b6b-4063cdda3dd2",
+            "label": "text_1",
+            "components": [],
+            "x": 802,
+            "y": 986,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Entry Fees:",
+            "fontFamily": "Normandia",
+            "fontSize": "40px"
+        },
+        {
+            "type": "Text",
+            "id": "7a462c4b-b70d-48f3-84d6-eaa96e68f93a",
+            "label": "text_2",
+            "components": [],
+            "x": 1114,
+            "y": 986,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "80 Meta Tokens",
+            "fontFamily": "Normandia",
+            "fontSize": "40px",
+            "color": "#f5ff1dff"
+        },
+        {
+            "type": "Image",
+            "id": "8cea04e2-8887-4149-9bae-3e9bb1f47d9f",
+            "label": "select_btn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "select-btn"
+            },
+            "x": 960,
+            "y": 882
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

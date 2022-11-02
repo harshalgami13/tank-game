@@ -1,0 +1,342 @@
+{
+    "id": "8e5165d9-05a8-4248-935e-653fbe660f59",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "GamePlay",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "787f4b68-f073-415b-81d4-2a748f1f65fa",
+            "label": "genaral",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "be4f5ae0-a274-45ee-8571-dc55c23d7828",
+                    "label": "backgroundImage",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Grassland"
+                    },
+                    "x": 960,
+                    "y": 540,
+                    "scaleX": 1.6,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "fc7e7329-feb1-48bb-8067-e692d125307f",
+                    "label": "wallet",
+                    "components": [],
+                    "texture": {
+                        "key": "wallet"
+                    },
+                    "x": 960,
+                    "y": 179,
+                    "scaleX": 1.2
+                },
+                {
+                    "type": "Image",
+                    "id": "e961410a-8343-4a45-9880-1a6459f6f616",
+                    "label": "wallet_1",
+                    "components": [],
+                    "texture": {
+                        "key": "wallet"
+                    },
+                    "x": 960,
+                    "y": 121,
+                    "scaleX": 0.3
+                },
+                {
+                    "type": "Image",
+                    "id": "4569e7c4-1fb7-4b9f-8773-e412c1caa6f9",
+                    "label": "settings_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "settings-icon"
+                    },
+                    "x": 1795,
+                    "y": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "e220397a-8dac-414e-b451-6c50144bf37b",
+                    "label": "homeicon",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "homeicon"
+                    },
+                    "x": 123,
+                    "y": 100,
+                    "scaleX": 1.35,
+                    "scaleY": 1.35
+                },
+                {
+                    "type": "Text",
+                    "id": "f0563e13-ac75-4d65-b196-e75858de49d2",
+                    "label": "player_2_name_1",
+                    "components": [],
+                    "x": 960,
+                    "y": 179,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Player 1 Turn",
+                    "fontFamily": "Normandia",
+                    "fontSize": "25px"
+                },
+                {
+                    "type": "Text",
+                    "id": "ce5a475e-e913-48fb-b02b-b5f9f2923143",
+                    "label": "player_2_name_2",
+                    "components": [],
+                    "x": 960,
+                    "y": 121,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "7",
+                    "fontFamily": "Normandia",
+                    "fontSize": "30px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "b24b6059-de3f-4fdb-ae27-be191ec1985e",
+            "label": "player2",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "1cb88e94-3a65-4584-a7cd-d3e2295a79aa",
+                    "label": "player_2_tank_2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "tank1"
+                    },
+                    "x": 1349,
+                    "y": 591,
+                    "scaleX": 0.9,
+                    "scaleY": 0.9,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "a3f15069-2e69-4281-b1cf-a42ef165ca46",
+                    "label": "player_2_tank_3",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "tank3"
+                    },
+                    "x": 1599,
+                    "y": 846,
+                    "scaleX": 0.9,
+                    "scaleY": 0.9,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "0ae9cf7c-9087-40f8-afb4-44480e52da0d",
+                    "label": "player_2_tank_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "tank2"
+                    },
+                    "x": 1539,
+                    "y": 354,
+                    "scaleX": 0.9,
+                    "scaleY": 0.9,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "2adbe775-7efb-4728-9f27-1f574aaa1206",
+                    "label": "life_player_2",
+                    "components": [],
+                    "texture": {
+                        "key": "life-btn"
+                    },
+                    "x": 1716,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "e026e2d9-ebf4-4600-8ede-dcb2ecfb61c5",
+                    "label": "shield_player_2",
+                    "components": [],
+                    "texture": {
+                        "key": "shield-btn"
+                    },
+                    "x": 1636,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "fe201a75-01c4-41b1-b6e9-dda9e570be82",
+                    "label": "bomb_player_2",
+                    "components": [],
+                    "texture": {
+                        "key": "bomb-btn"
+                    },
+                    "x": 1796,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "6ac8bd1b-80b4-4964-b430-3b691c330bc7",
+                    "label": "player2_Name",
+                    "components": [],
+                    "texture": {
+                        "key": "wallet"
+                    },
+                    "x": 1597,
+                    "y": 100
+                },
+                {
+                    "type": "Text",
+                    "id": "421a42bb-4824-4c95-ba83-23ca01d48176",
+                    "label": "player_2_name",
+                    "components": [],
+                    "x": 1597,
+                    "y": 100,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Player 2",
+                    "fontFamily": "Normandia",
+                    "fontSize": "25px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "a6c5b555-4103-485e-a27d-2155c22b4f1b",
+            "label": "fire_group",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Container",
+            "id": "adf46516-84b2-4c9e-8226-c434223e21f7",
+            "label": "player1",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "004766f2-5ca3-41c5-9753-5efced7141e4",
+                    "label": "player_1_tank_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "popup-tank1"
+                    },
+                    "x": 513,
+                    "y": 391,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "type": "Sprite",
+                    "id": "49fc03dc-8a1d-4066-affb-57a734ab4c51",
+                    "label": "player_1_tank_2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "popup-tank1"
+                    },
+                    "x": 238,
+                    "y": 639,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "type": "Sprite",
+                    "id": "90959ad6-3993-4638-b6d0-7a65f0c0f7f8",
+                    "label": "player_1_tank_3",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "popup-tank1"
+                    },
+                    "x": 489,
+                    "y": 888,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "type": "Image",
+                    "id": "6eeb144c-89ce-4663-a4db-7d868ad6c7b1",
+                    "label": "shield_player_1",
+                    "components": [],
+                    "texture": {
+                        "key": "shield-btn"
+                    },
+                    "x": 283,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "e535d1a7-dc39-4a36-9bc6-706800c22964",
+                    "label": "life_player_1",
+                    "components": [],
+                    "texture": {
+                        "key": "life-btn"
+                    },
+                    "x": 203,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "93575408-1440-4f3b-a3b3-f115580edcc3",
+                    "label": "bomb_player_1",
+                    "components": [],
+                    "texture": {
+                        "key": "bomb-btn"
+                    },
+                    "x": 123,
+                    "y": 177
+                },
+                {
+                    "type": "Image",
+                    "id": "e14ddc0b-4c9d-4ede-9ce8-41842f4ee5b3",
+                    "label": "player1_Name",
+                    "components": [],
+                    "texture": {
+                        "key": "wallet"
+                    },
+                    "x": 318,
+                    "y": 100
+                },
+                {
+                    "type": "Text",
+                    "id": "0ad21266-a84c-4d5e-b281-15d4ba12add6",
+                    "label": "player_1_name",
+                    "components": [],
+                    "x": 318,
+                    "y": 100,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Player 1",
+                    "fontFamily": "Normandia",
+                    "fontSize": "25px"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

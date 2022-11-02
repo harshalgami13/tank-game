@@ -1,0 +1,122 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "188934c0-efa9-4b5e-9c7f-f32228a84dd9",
+            "label": "IntroPage",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "b471881d-4e25-4d7a-9713-e5d60e232300",
+                    "label": "banner_img",
+                    "components": [],
+                    "texture": {
+                        "key": "banner-img"
+                    },
+                    "x": 960,
+                    "y": 540
+                },
+                {
+                    "type": "Image",
+                    "id": "c82e06c7-3bfc-4334-bdc9-d178b16604e9",
+                    "label": "sign_in",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "sign_in"
+                    },
+                    "x": 960,
+                    "y": 822
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "d1d45b18-2e40-4a86-b170-6ae3bcf6bb5f",
+            "label": "Select_Wallet",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e8da1c11-4825-4cc1-8bf6-59d7bd07dd6d",
+                    "label": "wallete_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "wallete-bg"
+                    },
+                    "x": 960,
+                    "y": 540
+                },
+                {
+                    "type": "Image",
+                    "id": "260fe50a-c9cd-4d89-962d-1c418f6b3861",
+                    "label": "coin_base_btn",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "coin-base-btn"
+                    },
+                    "x": 960,
+                    "y": 732
+                },
+                {
+                    "type": "Image",
+                    "id": "eca0b0f4-0273-45ec-ac4e-3f1756e907b0",
+                    "label": "metamask_btn",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "metamask-btn"
+                    },
+                    "x": 960,
+                    "y": 540
+                },
+                {
+                    "type": "Image",
+                    "id": "59174116-d064-468e-bf52-180c87cf82d3",
+                    "label": "trust_wallet_btn",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "trust-wallet-btn"
+                    },
+                    "x": 960,
+                    "y": 348
+                },
+                {
+                    "type": "Image",
+                    "id": "8013fc6f-ee36-4901-9bb2-70ad97e52990",
+                    "label": "settings_close",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "settings-close"
+                    },
+                    "x": 1339,
+                    "y": 167,
+                    "scaleX": 0.85,
+                    "scaleY": 0.85
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

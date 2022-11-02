@@ -1,0 +1,283 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/back-btn.png",
+                "type": "image",
+                "key": "back-btn"
+            },
+            {
+                "url": "assets/images/back-to-home-btn.png",
+                "type": "image",
+                "key": "back-to-home-btn"
+            },
+            {
+                "url": "src/scenes/BackgroundSelect.js",
+                "type": "sceneFile",
+                "key": "BackgroundSelect"
+            },
+            {
+                "url": "assets/images/banner-img.png",
+                "type": "image",
+                "key": "banner-img"
+            },
+            {
+                "url": "assets/images/battleframeimg.png",
+                "type": "image",
+                "key": "battleframeimg"
+            },
+            {
+                "url": "assets/images/bomb-btn.png",
+                "type": "image",
+                "key": "bomb-btn"
+            },
+            {
+                "url": "assets/images/coin-base-btn.png",
+                "type": "image",
+                "key": "coin-base-btn"
+            },
+            {
+                "url": "assets/images/commontankbg.png",
+                "type": "image",
+                "key": "commontankbg"
+            },
+            {
+                "url": "assets/images/Desert.png",
+                "type": "image",
+                "key": "Desert"
+            },
+            {
+                "url": "assets/images/explode-1.png",
+                "type": "image",
+                "key": "explode-1"
+            },
+            {
+                "url": "assets/images/explode-2.png",
+                "type": "image",
+                "key": "explode-2"
+            },
+            {
+                "url": "assets/images/explode-3.png",
+                "type": "image",
+                "key": "explode-3"
+            },
+            {
+                "url": "assets/images/fire.png",
+                "type": "image",
+                "key": "fire"
+            },
+            {
+                "url": "src/scenes/GamePlay.js",
+                "type": "sceneFile",
+                "key": "GamePlay"
+            },
+            {
+                "url": "assets/images/glow-card.png",
+                "type": "image",
+                "key": "glow-card"
+            },
+            {
+                "url": "assets/images/Grassland.png",
+                "type": "image",
+                "key": "Grassland"
+            },
+            {
+                "url": "assets/images/homeicon.png",
+                "type": "image",
+                "key": "homeicon"
+            },
+            {
+                "url": "assets/images/inventory-img.png",
+                "type": "image",
+                "key": "inventory-img"
+            },
+            {
+                "url": "assets/images/life-btn.jpg",
+                "type": "image",
+                "key": "life-btn"
+            },
+            {
+                "url": "assets/images/metamask-btn.png",
+                "type": "image",
+                "key": "metamask-btn"
+            },
+            {
+                "url": "assets/images/mytroops-btn.png",
+                "type": "image",
+                "key": "mytroops-btn"
+            },
+            {
+                "url": "assets/images/next-btn.png",
+                "type": "image",
+                "key": "next-btn"
+            },
+            {
+                "url": "assets/images/playnow.png",
+                "type": "image",
+                "key": "playnow"
+            },
+            {
+                "url": "assets/images/plus-img.png",
+                "type": "image",
+                "key": "plus-img"
+            },
+            {
+                "url": "assets/images/popup-tank1.png",
+                "type": "image",
+                "key": "popup-tank1"
+            },
+            {
+                "url": "assets/images/popup-tank2.png",
+                "type": "image",
+                "key": "popup-tank2"
+            },
+            {
+                "url": "assets/images/popup-tank3.png",
+                "type": "image",
+                "key": "popup-tank3"
+            },
+            {
+                "url": "assets/images/privew-frame.png",
+                "type": "image",
+                "key": "privew-frame"
+            },
+            {
+                "url": "assets/images/recruit-btn.png",
+                "type": "image",
+                "key": "recruit-btn"
+            },
+            {
+                "url": "assets/images/red-glow.png",
+                "type": "image",
+                "key": "red-glow"
+            },
+            {
+                "url": "assets/images/regionbackground.png",
+                "type": "image",
+                "key": "regionbackground"
+            },
+            {
+                "url": "assets/images/reward-icon.png",
+                "type": "image",
+                "key": "reward-icon"
+            },
+            {
+                "url": "src/scenes/ScenePlay.js",
+                "type": "sceneFile",
+                "key": "ScenePlay"
+            },
+            {
+                "url": "assets/images/select-btn.png",
+                "type": "image",
+                "key": "select-btn"
+            },
+            {
+                "url": "assets/images/select-team-btn.png",
+                "type": "image",
+                "key": "select-team-btn"
+            },
+            {
+                "url": "assets/images/settings-close.png",
+                "type": "image",
+                "key": "settings-close"
+            },
+            {
+                "url": "assets/images/settings-icon.png",
+                "type": "image",
+                "key": "settings-icon"
+            },
+            {
+                "url": "assets/images/shield-btn.png",
+                "type": "image",
+                "key": "shield-btn"
+            },
+            {
+                "url": "assets/images/sign_in.png",
+                "type": "image",
+                "key": "sign_in"
+            },
+            {
+                "url": "assets/images/slidenextbtn.png",
+                "type": "image",
+                "key": "slidenextbtn"
+            },
+            {
+                "url": "assets/images/slideprevbtn.png",
+                "type": "image",
+                "key": "slideprevbtn"
+            },
+            {
+                "url": "assets/images/Snow.png",
+                "type": "image",
+                "key": "Snow"
+            },
+            {
+                "url": "assets/images/sparkle.png",
+                "type": "image",
+                "key": "sparkle"
+            },
+            {
+                "url": "assets/images/stats.png",
+                "type": "image",
+                "key": "stats"
+            },
+            {
+                "url": "assets/images/story-icon.jpg",
+                "type": "image",
+                "key": "story-icon"
+            },
+            {
+                "url": "assets/images/tank1.png",
+                "type": "image",
+                "key": "tank1"
+            },
+            {
+                "url": "assets/images/tank2.png",
+                "type": "image",
+                "key": "tank2"
+            },
+            {
+                "url": "assets/images/tank3.png",
+                "type": "image",
+                "key": "tank3"
+            },
+            {
+                "url": "assets/images/troops-bg.png",
+                "type": "image",
+                "key": "troops-bg"
+            },
+            {
+                "url": "assets/images/troopsframe.png",
+                "type": "image",
+                "key": "troopsframe"
+            },
+            {
+                "url": "src/scenes/troopsSelect.js",
+                "type": "sceneFile",
+                "key": "troopsSelect"
+            },
+            {
+                "url": "assets/images/trust-wallet-btn.png",
+                "type": "image",
+                "key": "trust-wallet-btn"
+            },
+            {
+                "url": "assets/images/wallet.png",
+                "type": "image",
+                "key": "wallet"
+            },
+            {
+                "url": "assets/images/wallete-bg.png",
+                "type": "image",
+                "key": "wallete-bg"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
