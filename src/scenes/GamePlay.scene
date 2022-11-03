@@ -81,10 +81,11 @@
                 {
                     "type": "Text",
                     "id": "f0563e13-ac75-4d65-b196-e75858de49d2",
-                    "label": "player_2_name_1",
+                    "label": "playerTurn",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 960,
-                    "y": 179,
+                    "y": 178,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Player 1 Turn",
@@ -94,17 +95,34 @@
                 {
                     "type": "Text",
                     "id": "ce5a475e-e913-48fb-b02b-b5f9f2923143",
-                    "label": "player_2_name_2",
+                    "label": "time",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 960,
                     "y": 121,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "text": "7",
+                    "text": "10",
                     "fontFamily": "Normandia",
                     "fontSize": "30px"
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "47cf4ce9-046a-4417-8443-1c019b8f5508",
+            "label": "fire_group_1",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Container",
+            "id": "a6c5b555-4103-485e-a27d-2155c22b4f1b",
+            "label": "fire_group",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
         },
         {
             "type": "Container",
@@ -218,14 +236,6 @@
         },
         {
             "type": "Container",
-            "id": "a6c5b555-4103-485e-a27d-2155c22b4f1b",
-            "label": "fire_group",
-            "scope": "CLASS",
-            "components": [],
-            "list": []
-        },
-        {
-            "type": "Container",
             "id": "adf46516-84b2-4c9e-8226-c434223e21f7",
             "label": "player1",
             "components": [],
@@ -298,6 +308,7 @@
                     "type": "Image",
                     "id": "93575408-1440-4f3b-a3b3-f115580edcc3",
                     "label": "bomb_player_1",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "bomb-btn"

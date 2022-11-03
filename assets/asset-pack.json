@@ -27,9 +27,24 @@
                 "key": "battleframeimg"
             },
             {
+                "url": "assets/images/bomb-artillery.png",
+                "type": "image",
+                "key": "bomb-artillery"
+            },
+            {
                 "url": "assets/images/bomb-btn.png",
                 "type": "image",
                 "key": "bomb-btn"
+            },
+            {
+                "url": "assets/images/chariot.png",
+                "type": "image",
+                "key": "chariot"
+            },
+            {
+                "url": "assets/images/chariot2.png",
+                "type": "image",
+                "key": "chariot2"
             },
             {
                 "url": "assets/images/coin-base-btn.png",
@@ -65,6 +80,13 @@
                 "url": "assets/images/fire.png",
                 "type": "image",
                 "key": "fire"
+            },
+            {
+                "url": [
+                    "assets/Sound/fireSound.mp3"
+                ],
+                "type": "audio",
+                "key": "fireSound"
             },
             {
                 "url": "src/scenes/GamePlay.js",

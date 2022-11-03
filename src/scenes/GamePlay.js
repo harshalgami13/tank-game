@@ -10,6 +10,13 @@ class GamePlay extends Phaser.Scene {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		/*
+		S , A , Da, Def
+		70, 80, 70, 50
+		78, 20, 30, 40
+		Damage 	= basedamage * ((((Attk / Defense ) -1)/Strength) + 1)
+		
+		*/
 		/* END-USER-CTR-CODE */
 	}
 
@@ -45,19 +52,25 @@ class GamePlay extends Phaser.Scene {
 		homeicon.scaleY = 1.35;
 		genaral.add(homeicon);
 
-		// player_2_name_1
-		const player_2_name_1 = this.add.text(960, 179, "", {});
-		player_2_name_1.setOrigin(0.5, 0.5);
-		player_2_name_1.text = "Player 1 Turn";
-		player_2_name_1.setStyle({ "fontFamily": "Normandia", "fontSize": "25px" });
-		genaral.add(player_2_name_1);
+		// playerTurn
+		const playerTurn = this.add.text(960, 178, "", {});
+		playerTurn.setOrigin(0.5, 0.5);
+		playerTurn.text = "Player 1 Turn";
+		playerTurn.setStyle({ "fontFamily": "Normandia", "fontSize": "25px" });
+		genaral.add(playerTurn);
 
-		// player_2_name_2
-		const player_2_name_2 = this.add.text(960, 121, "", {});
-		player_2_name_2.setOrigin(0.5, 0.5);
-		player_2_name_2.text = "7";
-		player_2_name_2.setStyle({ "fontFamily": "Normandia", "fontSize": "30px" });
-		genaral.add(player_2_name_2);
+		// time
+		const time = this.add.text(960, 121, "", {});
+		time.setOrigin(0.5, 0.5);
+		time.text = "10";
+		time.setStyle({ "fontFamily": "Normandia", "fontSize": "30px" });
+		genaral.add(time);
+
+		// fire_group_1
+		const fire_group_1 = this.add.container(0, 0);
+
+		// fire_group
+		const fire_group = this.add.container(0, 0);
 
 		// player2
 		const player2 = this.add.container(0, 0);
@@ -106,9 +119,6 @@ class GamePlay extends Phaser.Scene {
 		player_2_name.setStyle({ "fontFamily": "Normandia", "fontSize": "25px" });
 		player2.add(player_2_name);
 
-		// fire_group
-		const fire_group = this.add.container(0, 0);
-
 		// player1
 		const player1 = this.add.container(0, 0);
 
@@ -155,13 +165,17 @@ class GamePlay extends Phaser.Scene {
 
 		this.backgroundImage = backgroundImage;
 		this.homeicon = homeicon;
+		this.playerTurn = playerTurn;
+		this.time = time;
+		this.fire_group_1 = fire_group_1;
+		this.fire_group = fire_group;
 		this.player_2_tank_2 = player_2_tank_2;
 		this.player_2_tank_3 = player_2_tank_3;
 		this.player_2_tank_1 = player_2_tank_1;
-		this.fire_group = fire_group;
 		this.player_1_tank_1 = player_1_tank_1;
 		this.player_1_tank_2 = player_1_tank_2;
 		this.player_1_tank_3 = player_1_tank_3;
+		this.bomb_player_1 = bomb_player_1;
 
 		this.events.emit("scene-awake");
 	}
@@ -170,20 +184,28 @@ class GamePlay extends Phaser.Scene {
 	backgroundImage;
 	/** @type {Phaser.GameObjects.Image} */
 	homeicon;
+	/** @type {Phaser.GameObjects.Text} */
+	playerTurn;
+	/** @type {Phaser.GameObjects.Text} */
+	time;
+	/** @type {Phaser.GameObjects.Container} */
+	fire_group_1;
+	/** @type {Phaser.GameObjects.Container} */
+	fire_group;
 	/** @type {Phaser.GameObjects.Image} */
 	player_2_tank_2;
 	/** @type {Phaser.GameObjects.Image} */
 	player_2_tank_3;
 	/** @type {Phaser.GameObjects.Image} */
 	player_2_tank_1;
-	/** @type {Phaser.GameObjects.Container} */
-	fire_group;
 	/** @type {Phaser.GameObjects.Sprite} */
 	player_1_tank_1;
 	/** @type {Phaser.GameObjects.Sprite} */
 	player_1_tank_2;
 	/** @type {Phaser.GameObjects.Sprite} */
 	player_1_tank_3;
+	/** @type {Phaser.GameObjects.Image} */
+	bomb_player_1;
 
 	/* START-USER-CODE */
 
@@ -199,6 +221,7 @@ class GamePlay extends Phaser.Scene {
 		this.player_1_tank_2.setTexture(sessionStorage.getItem("selected_image_1"))
 		this.player_1_tank_3.setTexture(sessionStorage.getItem("selected_image_2"))
 
+		this.fireSound = this.sound.add('fireSound')
 
 		this.homeicon.setInteractive().on('pointerdown', function () {
 			this.scene.start('ScenePlay')
@@ -213,18 +236,48 @@ class GamePlay extends Phaser.Scene {
 		this.isPlayer_1_select = false
 		this.isPlayer_2_select = false
 
+		this.isBomb = false
+
+		this.totalTime = 9
+		this.isPlayer_1_turn = true
+		this.playerTurn.setText('Player 1 Turn')
+
+		this.stopTime = setInterval(() => {
+			this.time.setText(this.totalTime)
+			if (this.totalTime == 0) {
+				this.totalTime = 11
+				if (this.isPlayer_1_turn) {
+					this.isPlayer_1_turn = false
+					this.playerTurn.setText('Player 2 Turn')
+					this.opponentTurn()
+				}
+				else {
+					this.isPlayer_1_turn = true
+					this.playerTurn.setText('Player 1 Turn')
+				}
+			}
+			this.totalTime--;
+		}, 1000)
+
+		this.bomb_player_1.setInteractive().on('pointerdown', function () {
+			this.isBomb = true
+		}, this)
+
+
+
+
 		// player 1 tank selections
 		this.player_1_tank_1.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == false && this.isPlayer_2_select == false) {
+			if (this.isPlayer_1_select == false && this.isPlayer_1_turn && this.isPlayer_2_select == false) {
 				this.player_1_X = this.player_1_tank_1.x
 				this.player_1_Y = this.player_1_tank_1.y
 				this.glowCard()
 				this.isPlayer_1_select = true
 			}
 		}, this)
-
+		
 		this.player_1_tank_2.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == false && this.isPlayer_2_select == false) {
+			if (this.isPlayer_1_select == false && this.isPlayer_1_turn && this.isPlayer_2_select == false) {
 				this.player_1_X = this.player_1_tank_2.x
 				this.player_1_Y = this.player_1_tank_2.y
 				this.glowCard()
@@ -233,7 +286,7 @@ class GamePlay extends Phaser.Scene {
 		}, this)
 
 		this.player_1_tank_3.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == false && this.isPlayer_2_select == false) {
+			if (this.isPlayer_1_select == false && this.isPlayer_1_turn && this.isPlayer_2_select == false) {
 				this.player_1_X = this.player_1_tank_3.x
 				this.player_1_Y = this.player_1_tank_3.y
 				this.glowCard()
@@ -278,6 +331,7 @@ class GamePlay extends Phaser.Scene {
 
 	glowCard() {
 		this.glow_card = this.add.image(this.player_1_X, this.player_1_Y, "glow-card");
+
 		this.glow_card.scaleX = 1.5;
 		this.glow_card.scaleY = 1.5;
 		this.fire_group.add(this.glow_card);
@@ -292,25 +346,33 @@ class GamePlay extends Phaser.Scene {
 	}
 
 	fireAnimation() {
-		this.fire = this.add.image(this.player_1_X, this.player_1_Y, "fire");
-
+		if (this.isBomb == true) {
+			this.fire = this.add.image(this.player_2_X, 0, "bomb-artillery")
+		}
+		else {
+			this.fire = this.add.image(this.player_1_X, this.player_1_Y, "fire");
+			if (this.player_1_X == 489 && this.player_1_Y == 888 && this.player_2_X != 1599 && this.player_2_Y != 846) {
+				this.fire.angle = -46
+			}
+			else {
+				this.fire.angle = -26;
+			}
+		}
+		this.isBomb = false
+		// this.isPlayer_1_turn = true
+		this.totalTime = 0
+		// this.fireSound.play()
 		this.red_glow = this.add.image(this.player_2_X, this.player_2_Y, "red-glow");
 		this.red_glow.scaleX = 1.5;
 		this.red_glow.scaleY = 1.5;
 		this.fire_group.add(this.red_glow);
 
-		if (this.player_1_X == 489 && this.player_1_Y == 888 && this.player_2_X != 1599 && this.player_2_Y != 846) {
-			this.fire.angle = -46
-		}
-		else {
-			this.fire.angle = -26;
-		}
 		this.fire_group.add(this.fire);
 
 		this.fireAni = this.tweens.add({
 			targets: this.fire,
 			duration: 300,
-			delay: 200,
+			// delay: 200,
 			props: {
 				x: this.player_2_X,
 				y: this.player_2_Y,
@@ -325,8 +387,7 @@ class GamePlay extends Phaser.Scene {
 				this.sparkle = this.add.image(this.player_2_X, this.player_2_Y, "sparkle").setScale(0.5)
 				this.bombAni = this.tweens.add({
 					targets: this.explode3,
-					// duration: 2000,
-					completeDelay: 800,
+					completeDelay: 900,
 					onComplete: () => {
 						this.explode3.destroy()
 						this.explode1.destroy()
@@ -338,6 +399,81 @@ class GamePlay extends Phaser.Scene {
 		})
 	}
 
+	opponentTurn() {
+		let player_2_positions = [
+			[1539, 354],
+			[1349, 591],
+			[1599, 846]
+		]
+		let player_1_positions = [
+			[513, 391],
+			[238, 639],
+			[489, 888]
+		]
+
+		var player1 = player_2_positions[Math.floor(Math.random() * player_2_positions.length)]
+		var player2 = player_1_positions[Math.floor(Math.random() * player_1_positions.length)]
+
+		// console.log(player1, player2)
+
+		this.player_1_X_New = player1[0]
+		this.player_1_Y_New = player1[1]
+
+		this.player_2_X_New = player2[0]
+		this.player_2_Y_New = player2[1]
+
+		console.log(this.player_1_X_New, this.player_1_Y_New)
+		console.log(this.player_2_X_New, this.player_2_Y_New)
+
+		let isBombPosibile = Math.random().toFixed(4)
+		if (isBombPosibile > 0.5 && isBombPosibile < 0.7) {
+			this.fire = this.add.image(this.player_2_X_New, -70, "bomb-artillery")
+			// console.log('bomb')
+		}
+		else {
+			this.fire = this.add.image(this.player_1_X_New, this.player_1_Y_New, "fire").setScale(-1, 1);
+			// console.log('fire')
+			// console.log(this.fire)
+			if (this.player_1_X_New == 1599 && this.player_1_Y_New == 846 && this.player_2_X_New != 489 && this.player_2_Y_New != 888) {
+				this.fire.angle = 47
+			}
+			else {
+				this.fire.angle = 26;
+			}
+		}
+
+
+		this.fire_group_1.add(this.fire);
+
+		this.fireAni = this.tweens.add({
+			targets: this.fire,
+			duration: 500,
+			delay: 2000,
+			props: {
+				x: this.player_2_X_New,
+				y: this.player_2_Y_New,
+			},
+			onComplete: () => {
+				this.fire.destroy()
+				this.explode3 = this.add.image(this.player_2_X_New, this.player_2_Y_New, "explode-3").setAlpha(0.7).setScale(1.5)
+				this.explode1 = this.add.image(this.player_2_X_New, this.player_2_Y_New, "explode-1")
+				this.explode2 = this.add.image(this.player_2_X_New, this.player_2_Y_New, "explode-2").setAlpha(1.5).setScale(1.3)
+				this.sparkle = this.add.image(this.player_2_X_New, this.player_2_Y_New, "sparkle").setScale(0.5)
+				this.totalTime = 0
+				this.bombAni = this.tweens.add({
+					targets: this.explode3,
+					completeDelay: 900,
+					onComplete: () => {
+						this.explode3.destroy()
+						this.explode1.destroy()
+						this.explode2.destroy()
+						this.sparkle.destroy()
+					}
+				})
+			}
+		})
+		// this.isPlayer_1_turn = true
+	}
 	/* END-USER-CODE */
 }
 

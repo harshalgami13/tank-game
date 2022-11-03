@@ -313,7 +313,7 @@ class troopsSelect extends Phaser.Scene {
 					this.tmpPlus = eval('this.plus_img_' + i)
 					this.tmpPlus.setTexture(this.previewTank.texture)
 					sessionStorage.setItem('selected_image_'+i, this.previewTank.texture.key)
-					
+
 					i++
 				}
 				if (i == 3) {

@@ -94,6 +94,12 @@ class Level extends Phaser.Scene {
 		this.coin_base_btn.setInteractive().on('pointerdown',function (){
 			this.scene.start("ScenePlay")	
 		},this)
+		this.trust_wallet_btn.setInteractive().on('pointerdown',function (){
+			this.scene.start("ScenePlay")	
+		},this)
+		this.metamask_btn.setInteractive().on('pointerdown',function (){
+			this.scene.start("ScenePlay")	
+		},this)
 
 	}
 
