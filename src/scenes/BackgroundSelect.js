@@ -20,10 +20,10 @@ class BackgroundSelect extends Phaser.Scene {
 		this.add.image(960, 540, "regionbackground");
 
 		// next_btn
-		this.add.image(1808, 30, "next-btn");
+		const next_btn = this.add.image(1808, 30, "next-btn");
 
 		// back_btn
-		this.add.image(97, 30, "back-btn");
+		const back_btn = this.add.image(97, 30, "back-btn");
 
 		// slidenextbtn
 		const slidenextbtn = this.add.image(1173, 882, "slidenextbtn");
@@ -46,6 +46,8 @@ class BackgroundSelect extends Phaser.Scene {
 		// select_btn
 		const select_btn = this.add.image(960, 882, "select-btn");
 
+		this.next_btn = next_btn;
+		this.back_btn = back_btn;
 		this.slidenextbtn = slidenextbtn;
 		this.slideprevbtn = slideprevbtn;
 		this.select_btn = select_btn;
@@ -53,6 +55,10 @@ class BackgroundSelect extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Phaser.GameObjects.Image} */
+	next_btn;
+	/** @type {Phaser.GameObjects.Image} */
+	back_btn;
 	/** @type {Phaser.GameObjects.Image} */
 	slidenextbtn;
 	/** @type {Phaser.GameObjects.Image} */
@@ -67,6 +73,8 @@ class BackgroundSelect extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
+		this.oSoundManager = new SoundManager(this)
 
 		this.backgroundImage = ['Desert', 'Grassland', 'Snow']
 		this.imageTitle = [
@@ -108,6 +116,8 @@ class BackgroundSelect extends Phaser.Scene {
 			if (this.currentSlidePosition == 2) {
 				this.slidenextbtn.setAlpha(0.5)
 			}
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
 		}, this)
 
 		this.slideprevbtn.setInteractive().on('pointerdown', function () {
@@ -121,14 +131,31 @@ class BackgroundSelect extends Phaser.Scene {
 			if (this.currentSlidePosition == 0) {
 				this.slideprevbtn.setAlpha(0.5)
 			}
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
 		}, this)
 
 		this.add.image(960, 513, "battleframeimg");
 
-		this.select_btn.setInteractive().on('pointerdown',function (){
+		this.select_btn.setInteractive().on('pointerdown', function () {
 			sessionStorage.setItem("BackgroundImage", this.currentSlideImage.texture.key)
 			this.scene.start('troopsSelect')
-		},this)
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+
+		this.next_btn.setInteractive().on('pointerdown', function () {
+			sessionStorage.setItem("BackgroundImage", 'Desert')
+			this.scene.start('troopsSelect')
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+
+		this.back_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start('ScenePlay')
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
 	}
 
 	/* END-USER-CODE */

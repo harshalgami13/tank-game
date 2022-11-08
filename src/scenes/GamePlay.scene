@@ -131,7 +131,7 @@
             "components": [],
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "1cb88e94-3a65-4584-a7cd-d3e2295a79aa",
                     "label": "player_2_tank_2",
                     "scope": "CLASS",
@@ -146,7 +146,7 @@
                     "flipX": true
                 },
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "a3f15069-2e69-4281-b1cf-a42ef165ca46",
                     "label": "player_2_tank_3",
                     "scope": "CLASS",
@@ -161,7 +161,7 @@
                     "flipX": true
                 },
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "0ae9cf7c-9087-40f8-afb4-44480e52da0d",
                     "label": "player_2_tank_1",
                     "scope": "CLASS",
@@ -231,6 +231,48 @@
                     "text": "Player 2",
                     "fontFamily": "Normandia",
                     "fontSize": "25px"
+                },
+                {
+                    "type": "Text",
+                    "id": "72f1de81-fd92-4680-a7d3-c7a053550165",
+                    "label": "player_2_health_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 1539,
+                    "y": 542,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100 / 100",
+                    "fontFamily": "Normandia",
+                    "fontSize": "30px"
+                },
+                {
+                    "type": "Text",
+                    "id": "5608820c-4327-4c9e-b2fd-8c7295d61e54",
+                    "label": "player_2_health_2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 1349,
+                    "y": 780,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100 / 100",
+                    "fontFamily": "Normandia",
+                    "fontSize": "30px"
+                },
+                {
+                    "type": "Text",
+                    "id": "f3afa973-c3d3-460f-9231-15f6433ff296",
+                    "label": "player_2_health_3",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 1599,
+                    "y": 1032,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100 / 100",
+                    "fontFamily": "Normandia",
+                    "fontSize": "30px"
                 }
             ]
         },

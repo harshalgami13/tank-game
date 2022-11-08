@@ -32,19 +32,28 @@
                 "key": "bomb-artillery"
             },
             {
+                "url": "assets/images/bomb-artillery-blast.png",
+                "type": "image",
+                "key": "bomb-artillery-blast"
+            },
+            {
                 "url": "assets/images/bomb-btn.png",
                 "type": "image",
                 "key": "bomb-btn"
             },
             {
-                "url": "assets/images/chariot.png",
-                "type": "image",
-                "key": "chariot"
+                "url": [
+                    "assets/sounds/bombartillery.mp3"
+                ],
+                "type": "audio",
+                "key": "bombartillery"
             },
             {
-                "url": "assets/images/chariot2.png",
-                "type": "image",
-                "key": "chariot2"
+                "url": [
+                    "assets/sounds/clickSound.mp3"
+                ],
+                "type": "audio",
+                "key": "clickSound"
             },
             {
                 "url": "assets/images/coin-base-btn.png",
@@ -55,6 +64,18 @@
                 "url": "assets/images/commontankbg.png",
                 "type": "image",
                 "key": "commontankbg"
+            },
+            {
+                "url": "assets/images/damaged-tank.png",
+                "type": "image",
+                "key": "damaged-tank"
+            },
+            {
+                "url": [
+                    "assets/sounds/Defence 3.mp3"
+                ],
+                "type": "audio",
+                "key": "Defence 3"
             },
             {
                 "url": "assets/images/Desert.png",
@@ -77,16 +98,23 @@
                 "key": "explode-3"
             },
             {
+                "url": [
+                    "assets/sounds/explosion.mp3"
+                ],
+                "type": "audio",
+                "key": "explosion"
+            },
+            {
                 "url": "assets/images/fire.png",
                 "type": "image",
                 "key": "fire"
             },
             {
                 "url": [
-                    "assets/Sound/fireSound.mp3"
+                    "assets/sounds/Fireball damage 6.mp3"
                 ],
                 "type": "audio",
-                "key": "fireSound"
+                "key": "Fireball damage 6"
             },
             {
                 "url": "src/scenes/GamePlay.js",
@@ -104,9 +132,23 @@
                 "key": "Grassland"
             },
             {
+                "url": [
+                    "assets/sounds/healTank.mp3"
+                ],
+                "type": "audio",
+                "key": "healTank"
+            },
+            {
                 "url": "assets/images/homeicon.png",
                 "type": "image",
                 "key": "homeicon"
+            },
+            {
+                "url": [
+                    "assets/sounds/ingameSound.mp3"
+                ],
+                "type": "audio",
+                "key": "ingameSound"
             },
             {
                 "url": "assets/images/inventory-img.png",
@@ -119,9 +161,26 @@
                 "key": "life-btn"
             },
             {
+                "url": "assets/images/loading-bar.png",
+                "type": "image",
+                "key": "loading-bar"
+            },
+            {
+                "url": [
+                    "assets/sounds/loseSound.mp3"
+                ],
+                "type": "audio",
+                "key": "loseSound"
+            },
+            {
                 "url": "assets/images/metamask-btn.png",
                 "type": "image",
                 "key": "metamask-btn"
+            },
+            {
+                "url": "assets/images/music-icon.png",
+                "type": "image",
+                "key": "music-icon"
             },
             {
                 "url": "assets/images/mytroops-btn.png",
@@ -214,6 +273,20 @@
                 "key": "shield-btn"
             },
             {
+                "url": [
+                    "assets/sounds/shieldTank.mp3"
+                ],
+                "type": "audio",
+                "key": "shieldTank"
+            },
+            {
+                "url": [
+                    "assets/sounds/shootTank.mp3"
+                ],
+                "type": "audio",
+                "key": "shootTank"
+            },
+            {
                 "url": "assets/images/sign_in.png",
                 "type": "image",
                 "key": "sign_in"
@@ -234,6 +307,16 @@
                 "key": "Snow"
             },
             {
+                "url": "assets/images/sound-icon.png",
+                "type": "image",
+                "key": "sound-icon"
+            },
+            {
+                "url": "src/Music/SoundManager.js",
+                "type": "script",
+                "key": "SoundManager"
+            },
+            {
                 "url": "assets/images/sparkle.png",
                 "type": "image",
                 "key": "sparkle"
@@ -249,6 +332,13 @@
                 "key": "story-icon"
             },
             {
+                "url": [
+                    "assets/sounds/Tank shoot 2.mp3"
+                ],
+                "type": "audio",
+                "key": "Tank shoot 2"
+            },
+            {
                 "url": "assets/images/tank1.png",
                 "type": "image",
                 "key": "tank1"
@@ -262,6 +352,13 @@
                 "url": "assets/images/tank3.png",
                 "type": "image",
                 "key": "tank3"
+            },
+            {
+                "url": [
+                    "assets/sounds/thunder damage 5 .mp3"
+                ],
+                "type": "audio",
+                "key": "thunder damage 5 "
             },
             {
                 "url": "assets/images/troops-bg.png",
@@ -292,6 +389,13 @@
                 "url": "assets/images/wallete-bg.png",
                 "type": "image",
                 "key": "wallete-bg"
+            },
+            {
+                "url": [
+                    "assets/sounds/winSound.mp3"
+                ],
+                "type": "audio",
+                "key": "winSound"
             }
         ]
     },

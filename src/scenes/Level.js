@@ -84,25 +84,47 @@ class Level extends Phaser.Scene {
 
 		this.editorCreate();
 
-		this.sign_in.setInteractive().on('pointerdown',function (){
+		this.oSoundManager = new SoundManager(this)
+
+		if (this.oSoundManager.ingameSound) {
+			this.oSoundManager.stopSound(this.oSoundManager.ingameSound, true)
+		}
+		
+		this.sign_in.setInteractive().on('pointerdown', function () {
 			this.select_Wallet.visible = true;
-		},this)
-		this.settings_close.setInteractive().on('pointerdown',function (){
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+		this.settings_close.setInteractive().on('pointerdown', function () {
 			this.select_Wallet.visible = false;
-		},this)
-
-		this.coin_base_btn.setInteractive().on('pointerdown',function (){
-			this.scene.start("ScenePlay")	
-		},this)
-		this.trust_wallet_btn.setInteractive().on('pointerdown',function (){
-			this.scene.start("ScenePlay")	
-		},this)
-		this.metamask_btn.setInteractive().on('pointerdown',function (){
-			this.scene.start("ScenePlay")	
-		},this)
-
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+		
+		this.coin_base_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start("ScenePlay")
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+		this.trust_wallet_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start("ScenePlay")
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+		this.metamask_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start("ScenePlay")
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
+		
+		sessionStorage.setItem('musicVolume', 0.023)
+		sessionStorage.setItem('soundVolume', 0.013)
+		
+		
+		this.oSoundManager.playSound(this.oSoundManager.ingameSound, true)
+		this.oSoundManager.setBackgroundVolume(sessionStorage.getItem('soundVolume'))
 	}
-
+	
 	/* END-USER-CODE */
 }
 

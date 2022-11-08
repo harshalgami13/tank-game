@@ -24,6 +24,7 @@
             "type": "Image",
             "id": "e05c0924-ab2b-481f-8c77-28e12121294b",
             "label": "next_btn",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "next-btn"
@@ -35,6 +36,7 @@
             "type": "Image",
             "id": "5fe8262e-ac01-4a0f-9942-09a4108a8c72",
             "label": "back_btn",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "back-btn"

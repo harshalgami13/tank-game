@@ -209,8 +209,11 @@ class troopsSelect extends Phaser.Scene {
 
 		this.editorCreate();
 
+		this.oSoundManager = new SoundManager(this)
+
+
 		this.troopsImage = [
-			['popup-tank1', 78, 20, 30, 40],
+			['popup-tank1', 78, 20, 30, 50],
 			['popup-tank2', 40, 80, 50, 70],
 			['popup-tank3', 50, 20, 80, 40],
 			['popup-tank1', 20, 50, 60, 90],
@@ -219,6 +222,10 @@ class troopsSelect extends Phaser.Scene {
 			['popup-tank1', 80, 50, 50, 70],
 			['popup-tank2', 90, 20, 40, 80]
 		]
+
+		// localStorage.setItem('troopsImage', JSON.stringify(this.troopsImage))
+
+		// console.log(JSON.parse(localStorage.getItem('troopsImage')))
 
 		this.counter = 1
 		// let i = 0
@@ -269,6 +276,9 @@ class troopsSelect extends Phaser.Scene {
 				this.tankBackground.on('pointerdown', function () {
 					this.previewTank.setTexture(this.troopsImage[i][0])
 
+					this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+					this.oSoundManager.setClickSoundVolume(0.05)
+
 					const shape_0 = this.make.graphics()
 					shape_0.fillRect(-20, 750, 300, 18)
 					const mask_0 = shape_0.createGeometryMask()
@@ -309,11 +319,12 @@ class troopsSelect extends Phaser.Scene {
 		let i = 0
 		if (i < 3) {
 			this.select_btn.setInteractive().on('pointerdown', function () {
+				this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+				this.oSoundManager.setClickSoundVolume(0.05)
 				if (i < 3) {
 					this.tmpPlus = eval('this.plus_img_' + i)
 					this.tmpPlus.setTexture(this.previewTank.texture)
-					sessionStorage.setItem('selected_image_'+i, this.previewTank.texture.key)
-
+					sessionStorage.setItem('selected_image_' + i, this.previewTank.texture.key)
 					i++
 				}
 				if (i == 3) {
@@ -322,13 +333,17 @@ class troopsSelect extends Phaser.Scene {
 			}, this)
 		}
 
-		this.back_to_home_btn.setInteractive().on('pointerdown',function (){
-			this.scene.start('ScenePlay');	
-		},this)
+		this.back_to_home_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start('ScenePlay');
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
 
-		this.select_team_btn.setInteractive().on('pointerdown',function (){
-			this.scene.start('GamePlay');	
-		},this)
+		this.select_team_btn.setInteractive().on('pointerdown', function () {
+			this.scene.start('GamePlay');
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+			this.oSoundManager.setClickSoundVolume(0.05)
+		}, this)
 
 	}
 

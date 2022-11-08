@@ -116,6 +116,188 @@
             "text": "2000",
             "fontFamily": "Normandia",
             "fontSize": "30px"
+        },
+        {
+            "type": "Container",
+            "id": "1568c809-4b0d-4d7f-836b-65e7fe4cc43a",
+            "label": "settings",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c6c24a0f-4d7d-49e0-a458-7208458562fb",
+                    "label": "troops_bg",
+                    "components": [],
+                    "texture": {
+                        "key": "troops-bg"
+                    },
+                    "x": 960,
+                    "y": 540,
+                    "scaleX": 0.7
+                },
+                {
+                    "type": "Image",
+                    "id": "7c907262-f266-40e7-bd4e-bd87232a2516",
+                    "label": "battleframeimg",
+                    "components": [],
+                    "texture": {
+                        "key": "battleframeimg"
+                    },
+                    "x": 960,
+                    "y": 540,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6
+                },
+                {
+                    "type": "Image",
+                    "id": "a8d67d43-110a-4589-94a5-1be64c7986cd",
+                    "label": "settings_close",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "settings-close"
+                    },
+                    "x": 1185,
+                    "y": 421,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "ba1c5f0b-a0d1-4cff-966d-784a94d1460a",
+                    "label": "music_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "music-icon"
+                    },
+                    "x": 793,
+                    "y": 492,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7
+                },
+                {
+                    "type": "Image",
+                    "id": "d405a1db-be6b-45b0-89d9-c14e747ea1d1",
+                    "label": "sound_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "sound-icon"
+                    },
+                    "x": 793,
+                    "y": 588,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7
+                },
+                {
+                    "type": "Image",
+                    "id": "9f37ed3f-c6eb-4096-8fe1-357be25fe696",
+                    "label": "loading_bar_1",
+                    "components": [],
+                    "texture": {
+                        "key": "loading-bar"
+                    },
+                    "x": 1168,
+                    "y": 492,
+                    "scaleX": 0.8,
+                    "scaleY": 0.7,
+                    "originX": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "3508f453-3c79-4a5f-a681-ff7419fd3112",
+                    "label": "loading_bar_2",
+                    "components": [],
+                    "texture": {
+                        "key": "loading-bar"
+                    },
+                    "x": 1003,
+                    "y": 588,
+                    "scaleX": 0.8,
+                    "scaleY": 0.7
+                },
+                {
+                    "type": "Container",
+                    "id": "72b40137-97f3-4646-a298-fdd8a86645c5",
+                    "label": "controller_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "463c63f0-9ab7-4bfe-bd14-dfea20bef6c5",
+                            "label": "value_1",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "loading-bar"
+                            },
+                            "x": 1168,
+                            "y": 492,
+                            "scaleX": 0.8,
+                            "scaleY": 0.7,
+                            "originX": 1,
+                            "visible": false
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ef2e1ca3-62c7-4a98-9078-6671877cf05e",
+                            "label": "slider_1",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "loading-bar"
+                            },
+                            "x": 1161,
+                            "y": 492,
+                            "scaleX": 0.15,
+                            "scaleY": 0.7,
+                            "angle": 90
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "cdacae9d-fd19-4616-ad42-6179a4f1a246",
+                    "label": "controller_2",
+                    "scope": "CLASS",
+                    "components": [],
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "26baa314-cb20-4a03-88f1-2539b93b890c",
+                            "label": "value_2",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "loading-bar"
+                            },
+                            "x": 1168.5999755859375,
+                            "y": 588,
+                            "scaleX": 0.8,
+                            "scaleY": 0.7,
+                            "originX": 1,
+                            "visible": false
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d96615f5-9667-4dc6-9224-87c3bf6c4929",
+                            "label": "slider_2",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "loading-bar"
+                            },
+                            "x": 1161,
+                            "y": 588,
+                            "scaleX": 0.15,
+                            "scaleY": 0.7,
+                            "angle": 90
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

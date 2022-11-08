@@ -15,8 +15,11 @@ class GamePlay extends Phaser.Scene {
 		70, 80, 70, 50
 		78, 20, 30, 40
 		Damage 	= basedamage * ((((Attk / Defense ) -1)/Strength) + 1)
-		
+
 		*/
+		this.player_2_heath_1 = 100
+		this.player_2_heath_2 = 100
+		this.player_2_heath_3 = 100
 		/* END-USER-CTR-CODE */
 	}
 
@@ -76,21 +79,21 @@ class GamePlay extends Phaser.Scene {
 		const player2 = this.add.container(0, 0);
 
 		// player_2_tank_2
-		const player_2_tank_2 = this.add.image(1349, 591, "tank1");
+		const player_2_tank_2 = this.add.sprite(1349, 591, "tank1");
 		player_2_tank_2.scaleX = 0.9;
 		player_2_tank_2.scaleY = 0.9;
 		player_2_tank_2.flipX = true;
 		player2.add(player_2_tank_2);
 
 		// player_2_tank_3
-		const player_2_tank_3 = this.add.image(1599, 846, "tank3");
+		const player_2_tank_3 = this.add.sprite(1599, 846, "tank3");
 		player_2_tank_3.scaleX = 0.9;
 		player_2_tank_3.scaleY = 0.9;
 		player_2_tank_3.flipX = true;
 		player2.add(player_2_tank_3);
 
 		// player_2_tank_1
-		const player_2_tank_1 = this.add.image(1539, 354, "tank2");
+		const player_2_tank_1 = this.add.sprite(1539, 354, "tank2");
 		player_2_tank_1.scaleX = 0.9;
 		player_2_tank_1.scaleY = 0.9;
 		player_2_tank_1.flipX = true;
@@ -118,6 +121,27 @@ class GamePlay extends Phaser.Scene {
 		player_2_name.text = "Player 2";
 		player_2_name.setStyle({ "fontFamily": "Normandia", "fontSize": "25px" });
 		player2.add(player_2_name);
+
+		// player_2_health_1
+		const player_2_health_1 = this.add.text(1539, 542, "", {});
+		player_2_health_1.setOrigin(0.5, 0.5);
+		player_2_health_1.text = "100 / 100";
+		player_2_health_1.setStyle({ "fontFamily": "Normandia", "fontSize": "30px" });
+		player2.add(player_2_health_1);
+
+		// player_2_health_2
+		const player_2_health_2 = this.add.text(1349, 780, "", {});
+		player_2_health_2.setOrigin(0.5, 0.5);
+		player_2_health_2.text = "100 / 100";
+		player_2_health_2.setStyle({ "fontFamily": "Normandia", "fontSize": "30px" });
+		player2.add(player_2_health_2);
+
+		// player_2_health_3
+		const player_2_health_3 = this.add.text(1599, 1032, "", {});
+		player_2_health_3.setOrigin(0.5, 0.5);
+		player_2_health_3.text = "100 / 100";
+		player_2_health_3.setStyle({ "fontFamily": "Normandia", "fontSize": "30px" });
+		player2.add(player_2_health_3);
 
 		// player1
 		const player1 = this.add.container(0, 0);
@@ -172,6 +196,9 @@ class GamePlay extends Phaser.Scene {
 		this.player_2_tank_2 = player_2_tank_2;
 		this.player_2_tank_3 = player_2_tank_3;
 		this.player_2_tank_1 = player_2_tank_1;
+		this.player_2_health_1 = player_2_health_1;
+		this.player_2_health_2 = player_2_health_2;
+		this.player_2_health_3 = player_2_health_3;
 		this.player_1_tank_1 = player_1_tank_1;
 		this.player_1_tank_2 = player_1_tank_2;
 		this.player_1_tank_3 = player_1_tank_3;
@@ -192,12 +219,18 @@ class GamePlay extends Phaser.Scene {
 	fire_group_1;
 	/** @type {Phaser.GameObjects.Container} */
 	fire_group;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	player_2_tank_2;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	player_2_tank_3;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	player_2_tank_1;
+	/** @type {Phaser.GameObjects.Text} */
+	player_2_health_1;
+	/** @type {Phaser.GameObjects.Text} */
+	player_2_health_2;
+	/** @type {Phaser.GameObjects.Text} */
+	player_2_health_3;
 	/** @type {Phaser.GameObjects.Sprite} */
 	player_1_tank_1;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -221,7 +254,9 @@ class GamePlay extends Phaser.Scene {
 		this.player_1_tank_2.setTexture(sessionStorage.getItem("selected_image_1"))
 		this.player_1_tank_3.setTexture(sessionStorage.getItem("selected_image_2"))
 
-		this.fireSound = this.sound.add('fireSound')
+		this.oSoundManager = new SoundManager(this)
+
+		this.oSoundManager.setSoundsVolume(sessionStorage.getItem('soundVolume'))
 
 		this.homeicon.setInteractive().on('pointerdown', function () {
 			this.scene.start('ScenePlay')
@@ -242,46 +277,53 @@ class GamePlay extends Phaser.Scene {
 		this.isPlayer_1_turn = true
 		this.playerTurn.setText('Player 1 Turn')
 
-		this.stopTime = setInterval(() => {
-			this.time.setText(this.totalTime)
-			if (this.totalTime == 0) {
-				this.totalTime = 11
-				if (this.isPlayer_1_turn) {
-					this.isPlayer_1_turn = false
-					this.playerTurn.setText('Player 2 Turn')
-					this.opponentTurn()
-				}
-				else {
-					this.isPlayer_1_turn = true
-					this.playerTurn.setText('Player 1 Turn')
-				}
-			}
-			this.totalTime--;
-		}, 1000)
+		// this.stopTime = setInterval(() => {
+		// 	this.time.setText(this.totalTime)
+		// 	if (this.totalTime == 0) {
+		// 		this.totalTime = 11
+		// 		if (this.isPlayer_1_turn) {
+		// 			this.isPlayer_1_turn = false
+		// 			this.playerTurn.setText('Player 2 Turn')
+		// 			this.opponentTurn()
+		// 		}
+		// 		else {
+		// 			this.isPlayer_1_turn = true
+		// 			this.playerTurn.setText('Player 1 Turn')
+		// 		}
+		// 	}
+		// 	this.totalTime--;
+		// }, 1000)
 
 		this.bomb_player_1.setInteractive().on('pointerdown', function () {
 			this.isBomb = true
+			this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
 		}, this)
 
 
 
 
 		// player 1 tank selections
+
 		this.player_1_tank_1.setInteractive().on('pointerdown', function () {
 			if (this.isPlayer_1_select == false && this.isPlayer_1_turn && this.isPlayer_2_select == false) {
 				this.player_1_X = this.player_1_tank_1.x
 				this.player_1_Y = this.player_1_tank_1.y
 				this.glowCard()
 				this.isPlayer_1_select = true
+				this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+				this.oSoundManager.setClickSoundVolume(0.05)
 			}
 		}, this)
-		
+
+
 		this.player_1_tank_2.setInteractive().on('pointerdown', function () {
 			if (this.isPlayer_1_select == false && this.isPlayer_1_turn && this.isPlayer_2_select == false) {
 				this.player_1_X = this.player_1_tank_2.x
 				this.player_1_Y = this.player_1_tank_2.y
 				this.glowCard()
 				this.isPlayer_1_select = true
+				this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+				this.oSoundManager.setClickSoundVolume(0.05)
 			}
 		}, this)
 
@@ -291,41 +333,53 @@ class GamePlay extends Phaser.Scene {
 				this.player_1_Y = this.player_1_tank_3.y
 				this.glowCard()
 				this.isPlayer_1_select = true
+				this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+				this.oSoundManager.setClickSoundVolume(0.05)
 			}
 		}, this)
 
 		// player 2 tank selections
 		this.player_2_tank_1.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
-				this.player_2_X = this.player_2_tank_1.x
-				this.player_2_Y = this.player_2_tank_1.y
-				this.fireAnimation()
-				this.isPlayer_1_select = false
-				this.isPlayer_2_select == true
+			if (this.player_2_heath_1 > 0) {
+				if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
+					this.player_2_X = this.player_2_tank_1.x
+					this.player_2_Y = this.player_2_tank_1.y
+					this.fireAnimation(0)
+					this.isPlayer_1_select = false
+					this.isPlayer_2_select == true
+					this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+					this.oSoundManager.setClickSoundVolume(0.05)
+				}
 			}
 		}, this)
 
 		this.player_2_tank_2.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
-				this.player_2_X = this.player_2_tank_2.x
-				this.player_2_Y = this.player_2_tank_2.y
-				this.fireAnimation()
-				this.isPlayer_1_select = false
-				this.isPlayer_2_select == true
+			if (this.player_2_heath_2 > 0) {
+				if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
+					this.player_2_X = this.player_2_tank_2.x
+					this.player_2_Y = this.player_2_tank_2.y
+					this.fireAnimation(1)
+					this.isPlayer_1_select = false
+					this.isPlayer_2_select == true
+					this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+					this.oSoundManager.setClickSoundVolume(0.05)
+				}
 			}
 		}, this)
 
 		this.player_2_tank_3.setInteractive().on('pointerdown', function () {
-			if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
-				this.player_2_X = this.player_2_tank_3.x
-				this.player_2_Y = this.player_2_tank_3.y
-				this.fireAnimation()
-				this.isPlayer_1_select = false
-				this.isPlayer_2_select == true
+			if (this.player_2_heath_3 > 0) {
+				if (this.isPlayer_1_select == true && this.isPlayer_2_select == false) {
+					this.player_2_X = this.player_2_tank_3.x
+					this.player_2_Y = this.player_2_tank_3.y
+					this.fireAnimation(2)
+					this.isPlayer_1_select = false
+					this.isPlayer_2_select == true
+					this.oSoundManager.playSound(this.oSoundManager.clickSound, false)
+					this.oSoundManager.setClickSoundVolume(0.05)
+				}
 			}
 		}, this)
-
-
 
 	}
 
@@ -345,12 +399,15 @@ class GamePlay extends Phaser.Scene {
 
 	}
 
-	fireAnimation() {
+	fireAnimation(tankNumber) {
+
+
 		if (this.isBomb == true) {
 			this.fire = this.add.image(this.player_2_X, 0, "bomb-artillery")
 		}
 		else {
 			this.fire = this.add.image(this.player_1_X, this.player_1_Y, "fire");
+			this.oSoundManager.playSound(this.oSoundManager.fireSound, false)
 			if (this.player_1_X == 489 && this.player_1_Y == 888 && this.player_2_X != 1599 && this.player_2_Y != 846) {
 				this.fire.angle = -46
 			}
@@ -359,9 +416,7 @@ class GamePlay extends Phaser.Scene {
 			}
 		}
 		this.isBomb = false
-		// this.isPlayer_1_turn = true
 		this.totalTime = 0
-		// this.fireSound.play()
 		this.red_glow = this.add.image(this.player_2_X, this.player_2_Y, "red-glow");
 		this.red_glow.scaleX = 1.5;
 		this.red_glow.scaleY = 1.5;
@@ -381,6 +436,8 @@ class GamePlay extends Phaser.Scene {
 				this.fire.destroy()
 				this.glow_card.destroy()
 				this.red_glow.destroy()
+				this.opponentHealthCount(tankNumber)
+
 				this.explode3 = this.add.image(this.player_2_X, this.player_2_Y, "explode-3").setAlpha(0.7).setScale(1.5)
 				this.explode1 = this.add.image(this.player_2_X, this.player_2_Y, "explode-1")
 				this.explode2 = this.add.image(this.player_2_X, this.player_2_Y, "explode-2").setAlpha(1.5).setScale(1.3)
@@ -399,6 +456,44 @@ class GamePlay extends Phaser.Scene {
 		})
 	}
 
+	opponentHealthCount(tankNumber) {
+
+
+
+		switch (tankNumber) {
+			case 0:
+				this.player_2_heath_1 -= 50
+				this.player_2_health_1.text = this.player_2_heath_1 + ' / 100'
+				if (this.player_2_heath_1 < 1) {
+					this.player_2_health_1.text = '0 / 100'
+					this.player_2_tank_1.setTexture('damaged-tank')
+					this.oSoundManager.playSound(this.oSoundManager.explosion, false)
+				}
+				break
+			case 1:
+				this.player_2_heath_2 -= 50
+				this.player_2_health_2.text = this.player_2_heath_2 + ' / 100'
+				if (this.player_2_heath_2 < 1) {
+					this.player_2_health_2.text = '0 / 100'
+					this.player_2_tank_2.setTexture('damaged-tank')
+					this.oSoundManager.playSound(this.oSoundManager.explosion, false)
+				}
+				break
+			case 2:
+				this.player_2_heath_3 -= 50
+				this.player_2_health_3.text = this.player_2_heath_3 + ' / 100'
+				if (this.player_2_heath_3 < 1) {
+					this.player_2_health_3.text = '0 / 100'
+					this.player_2_tank_3.setTexture('damaged-tank')
+					this.oSoundManager.playSound(this.oSoundManager.explosion, false)
+				}
+				break
+		}
+
+
+
+	}
+
 	opponentTurn() {
 		let player_2_positions = [
 			[1539, 354],
@@ -411,10 +506,13 @@ class GamePlay extends Phaser.Scene {
 			[489, 888]
 		]
 
-		var player1 = player_2_positions[Math.floor(Math.random() * player_2_positions.length)]
-		var player2 = player_1_positions[Math.floor(Math.random() * player_1_positions.length)]
+		var player1Index = Math.floor(Math.random() * player_2_positions.length)
+		var player2Index = Math.floor(Math.random() * player_1_positions.length)
+		var player1 = player_2_positions[player1Index]
+		var player2 = player_1_positions[player2Index]
 
-		// console.log(player1, player2)
+		// console.log(player1Index, player1Index)
+		// console.log(player1, player2)	
 
 		this.player_1_X_New = player1[0]
 		this.player_1_Y_New = player1[1]
@@ -422,8 +520,8 @@ class GamePlay extends Phaser.Scene {
 		this.player_2_X_New = player2[0]
 		this.player_2_Y_New = player2[1]
 
-		console.log(this.player_1_X_New, this.player_1_Y_New)
-		console.log(this.player_2_X_New, this.player_2_Y_New)
+		// console.log(this.player_1_X_New, this.player_1_Y_New)
+		// console.log(this.player_2_X_New, this.player_2_Y_New)
 
 		let isBombPosibile = Math.random().toFixed(4)
 		if (isBombPosibile > 0.5 && isBombPosibile < 0.7) {
